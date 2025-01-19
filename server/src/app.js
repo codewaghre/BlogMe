@@ -15,9 +15,11 @@ import { adminRoute } from './routes/admin.routes.js'
 
 const app = express()
 
-const allowedOrigins = process.env.CORS_ORIGIN.split(',')
+
+
+
 app.use(cors({
-    origin: allowedOrigins,
+    origin: process.env.CORS_ORIGIN,
     credentials: true
 }))
 
