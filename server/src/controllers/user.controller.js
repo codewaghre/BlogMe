@@ -33,8 +33,7 @@ const updateUser = async (req, res, next) => {
         const data = JSON.parse(req.body.data);
         const file = req.file
 
-        console.log("File:", file);
-        console.log("Data:", data);
+
 
         const user = await User.findById(id)
         if (!user) {
