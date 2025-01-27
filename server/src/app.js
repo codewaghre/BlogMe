@@ -52,6 +52,11 @@ app.get("/", (req, res) => {
     res.send("Hello, connected!");
 });
 
+// Ignore favicon requests
+app.get('/favicon.ico', (req, res) => {
+    res.status(204).end(); // No content
+});
+
 
 //error handler
 app.use(notFound)
