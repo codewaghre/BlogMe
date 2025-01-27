@@ -8,12 +8,13 @@ dotenv.config({
 })
 
 
-//test
-// app.get("/", (req, res) => {
-//     res.json({
-//         name: "Abhishek Waghre",
-//     })
-// })
+// test
+app.get("/", (req, res) => {
+    res.json({
+        name: "Abhishek Waghre",
+    })
+})
+
 
 // connect database
 connectDB().then(() => {
