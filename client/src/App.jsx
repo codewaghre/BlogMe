@@ -35,9 +35,6 @@ function App() {
         <Routes>
           <Route path={RouteIndex} element={<Layout />} >
 
-
-
-
             <Route index element={<Index />} />
             <Route path={RouteBlogByCategory()} element={<BlogByCategory />} />
             <Route path={RouteSearch()} element={<SearchResult />} />
