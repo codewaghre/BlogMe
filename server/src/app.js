@@ -48,7 +48,7 @@ app.use("/api/admin", adminRoute)
 
 
 // Testing route
-app.get("/", (req, res) => {
+app.get("/test", (req, res) => {
     res.send("Hello, connected!");
 });
 
