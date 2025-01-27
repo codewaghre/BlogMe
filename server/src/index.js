@@ -1,19 +1,11 @@
-import dotenv from "dotenv"
+import dotenv from "dotenv";
 import { app } from "./app.js";
 import connectDB from "./db/connect.db.js";
 
-// setup dot env 
+// Setup dotenv
 dotenv.config({
     path: './.env'
-})
-
-
-// test
-app.get("/", (req, res) => {
-    res.json({
-        name: "Abhishek Waghre",
-    })
-})
+});
 
 
 // connect database
@@ -24,13 +16,3 @@ connectDB().then(() => {
 }).catch((error) => {
     console.log(`Database Connection Failed!!!`, error);
 })
-
-
-
-
-
-
-
-
-
-

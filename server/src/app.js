@@ -15,15 +15,12 @@ import { adminRoute } from './routes/admin.routes.js'
 
 const app = express()
 
-
-
-
 app.use(cors({
     origin: process.env.CORS_ORIGIN,
     credentials: true
 }))
 
-app.use(express.json())
+app.use(express.json());
 app.use(express.urlencoded({ extended: true, limit: "16kb" }))
 app.use(express.static("public"))
 app.use(cookieParser())
@@ -48,6 +45,13 @@ app.use("/api/blog-like", likeRoute)
 
 //admin Route
 app.use("/api/admin", adminRoute)
+
+
+// Testing route
+app.get("/", (req, res) => {
+    res.send("Hello, connected!");
+});
+
 
 //error handler
 app.use(notFound)
