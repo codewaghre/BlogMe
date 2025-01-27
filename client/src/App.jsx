@@ -2,10 +2,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom"
 
 import Layout from "./layout/Layout"
 import Index from "./pages"
-
 import SignIn from "./pages/SignIn"
 import SignUp from "./pages/SignUp"
-
 import Profile from "./pages/Profile"
 import ChangePassword from "./pages/ChangePassword"
 
