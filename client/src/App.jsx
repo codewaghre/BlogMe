@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 
 import Layout from "./layout/Layout"
-import Index from "./pages"
+import Index from "./pages/Index"
 import SignIn from "./pages/SignIn"
 import SignUp from "./pages/SignUp"
 import Profile from "./pages/Profile"
