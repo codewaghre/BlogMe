@@ -2,12 +2,12 @@
   "name": "blogme",
   "version": "1.0.0",
   "description": "Blog Application in MERN Stack",
-  "main": "src/index.js",
+  "main": "src/app.js",
   "type": "module",
   "scripts": {
     "test": "node src/index.js",
-    "dev": "nodemon src/index.js",
-    "start": "node src/index.js"
+    "dev": "nodemon src/app.js",
+    "start": "node src/app.js"
   },
   "author": "Abhishek Waghre (codeWaghre.)",
   "license": "ISC",

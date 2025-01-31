@@ -30,8 +30,7 @@ function Index() {
             {
                 blogData && blogData?.blog?.length > 0 ?
                     blogData?.blog.map(blog => <BlogCard key={blog._id} props={blog} />)
-                    :
-                    <div>Data Not Found.</div>
+                    : <div>Data Not Found.</div>
             }
         </div>
 

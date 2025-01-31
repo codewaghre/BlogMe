@@ -1,6 +1,9 @@
 import express from 'express'
 import cors from 'cors'
 import cookieParser from 'cookie-parser'
+import dotenv from "dotenv";
+import { app } from "./app.js";
+import connectDB from "./db/connect.db.js";
 
 import { notFound, errorHandler } from "./middlewares/error.middleware.js"
 
@@ -11,6 +14,11 @@ import { blogRoute } from './routes/blog.routes.js'
 import { commentRoute } from './routes/comment.routes.js'
 import { likeRoute } from './routes/like.routes.js'
 import { adminRoute } from './routes/admin.routes.js'
+
+// Setup dotenv
+dotenv.config({
+    path: './.env'
+}); s
 
 
 const app = express()
@@ -24,6 +32,18 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true, limit: "16kb" }))
 app.use(express.static("public"))
 app.use(cookieParser())
+
+// connect database
+connectDB().then(() => {
+    app.listen(process.env.PORT, () => {
+        console.log(` Server is Running On ${process.env.PORT}`);
+        console.log("Done");
+    })
+
+}).catch((error) => {
+    console.log(`Database Connection Failed!!!`, error);
+})
+
 
 //Auth Route
 app.use("/api/auth", authRoute)
