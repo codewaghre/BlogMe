@@ -2,7 +2,6 @@ import express from 'express'
 import cors from 'cors'
 import cookieParser from 'cookie-parser'
 import dotenv from "dotenv";
-import { app } from "./app.js";
 import connectDB from "./db/connect.db.js";
 
 import { notFound, errorHandler } from "./middlewares/error.middleware.js"
@@ -18,7 +17,9 @@ import { adminRoute } from './routes/admin.routes.js'
 // Setup dotenv
 dotenv.config({
     path: './.env'
-}); s
+});
+
+const port = process.env.PORT
 
 
 const app = express()
@@ -34,16 +35,11 @@ app.use(express.static("public"))
 app.use(cookieParser())
 
 // connect database
-connectDB().then(() => {
-    app.listen(process.env.PORT, () => {
-        console.log(` Server is Running On ${process.env.PORT}`);
-        console.log("Done");
-    })
+connectDB()
 
-}).catch((error) => {
-    console.log(`Database Connection Failed!!!`, error);
+app.get("/", (req, res) => {
+    res.send("Server is Running ")
 })
-
 
 //Auth Route
 app.use("/api/auth", authRoute)
@@ -81,6 +77,11 @@ app.get('/favicon.ico', (req, res) => {
 //error handler
 app.use(notFound)
 app.use(errorHandler)
+
+
+app.listen(port, () => {
+    console.log(`Express is working on http://localhost:${port}`);
+});
 
 
 
