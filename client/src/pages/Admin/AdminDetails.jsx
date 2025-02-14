@@ -34,7 +34,8 @@ function AdminDetails() {
         method: 'get',
         credentials: 'include'
     }, [refreshData])
-    // console.log("categoryData", adminData.data[0].email);
+
+
 
     // Fetch :- Dalete the Perticuler Category
     const handleDelete = async (id) => {
@@ -74,6 +75,8 @@ function AdminDetails() {
                                 <TableHead>Role </TableHead>
                                 <TableHead>Name </TableHead>
                                 <TableHead>Email</TableHead>
+                                <TableHead>Avatar</TableHead>
+
                                 <TableHead>Date</TableHead>
                                 <TableHead>Action</TableHead>
                             </TableRow>
@@ -82,8 +85,9 @@ function AdminDetails() {
                         {/* Lsit of All Category with Update - Delete  */}
                         <TableBody>
                             {adminData && adminData?.data?.length > 0 ?
-                                adminData?.data?.map(admin =>
+                                adminData?.data?.map((admin) =>
                                     <TableRow key={admin?.role}>
+                                        <TableCell>{admin?.role}</TableCell>
                                         <TableCell>{admin?.name}</TableCell>
                                         <TableCell>{admin?.email}</TableCell>
                                         <TableCell>
