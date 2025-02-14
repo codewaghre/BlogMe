@@ -40,7 +40,7 @@ import { useSidebar } from './ui/sidebar';
 function Topbar() {
 
     const user = useSelector(state => state.user)
-    console.log("user Redux", user);
+    // console.log("user Redux", user);
 
     const { toggleSidebar } = useSidebar()
     const [showSearch, setShowSearch] = useState(false)
