@@ -10,12 +10,10 @@ const connectDB = async () => {
 
         mongoose.connection.on("error", (error) => {
             console.log(`DataBase Connection Error:- ${error} `);
-
         })
 
         mongoose.connection.on("disconnect", () => {
             console.log("MongoDb Discconected, Attempting to reconnect.....");
-
         })
 
         mongoose.connection.on('reconnected', () => {
