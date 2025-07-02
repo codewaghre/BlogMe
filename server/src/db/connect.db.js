@@ -16,9 +16,6 @@ const connectDB = async () => {
             console.log("MongoDb Discconected, Attempting to reconnect.....");
         })
 
-        mongoose.connection.on('reconnected', () => {
-            console.info('MongoDB reconnected successfully');
-        });
 
     } catch (error) {
         console.log(` Error connection to DB:- ${error.message}`);
